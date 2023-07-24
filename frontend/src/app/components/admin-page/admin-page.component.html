@@ -1,0 +1,34 @@
+<div class="container mt-4">
+  <h1>Bienvenido, Administrador</h1>
+
+  <!-- Botón para redireccionar a la página de agregar usuarios -->
+  <a routerLink="/register" class="btn btn-primary mt-3">Agregar Usuarios</a>
+
+  <h2>Lista de Usuarios</h2>
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Cargo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Utilizamos *ngFor para iterar sobre la lista de usuarios y mostrarlos en la tabla -->
+      <!-- Aquí, asumimos que tienes una propiedad 'users' en el componente que contiene la lista de usuarios -->
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        <td>
+          <!-- Agrega aquí los botones u opciones para editar o eliminar el usuario -->
+          <button class="btn btn-primary btn-sm">Editar</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteUser(user)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  

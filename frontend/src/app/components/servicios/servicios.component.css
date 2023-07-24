@@ -1,0 +1,226 @@
+header{
+    background: rgb(144,66,254);
+    background: linear-gradient(180deg, rgba(144,66,254,1) 0%, rgba(0,0,0,1) 100%);
+    padding: 0px;
+  }
+  
+  body{
+    background:url(/assets/fondo.jpg);
+    background-size: cover;
+  }
+  
+  .div1{
+    width:auto;
+    height:auto;
+    float:left;
+  }
+  
+  .butdef{
+      margin-left: 150px; 
+      width: 100px;
+      height: 35px; 
+      font-size: 20px;
+      background-color: bisque;
+  }
+  
+  aside{
+     margin: 10px;
+     padding: 20px;
+     margin-right: 100px;
+     margin-top: 100px;
+     width: auto;
+     height: auto;
+     border: 1px;
+     float:right;
+     background: #63390f;
+     align-items: center;
+     color: white;
+  }
+  
+  .centro{
+      text-align: center;
+  }
+  
+  .texto{
+      color: #ffffff;
+      font-size: 30px;
+      margin: 10px 50px;
+      width: 50%;
+      width:auto;
+      height:auto;
+  }
+  
+  .container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  nav a {
+      font:bold 14px verdana;
+      float: left;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 12px;
+      text-decoration: underline;
+      font-size: 18px; 
+      line-height: 25px;
+      border-radius: 4px;
+      margin: 2px 30px;
+  }
+    
+  nav{
+      overflow: hidden;
+      padding: 10px 5px;
+      background: rgb(0,0,0);
+      background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(144,66,254,1) 50%, rgba(0,0,0,1) 100%);
+  } 
+    
+  footer {
+    overflow: hidden;
+    color: #fff;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(144,66,254,1) 50%, rgba(0,0,0,1) 100%);
+    padding: 5px 10px;
+    text-align: center;
+    clear:both; 
+}
+  
+footer li{
+    list-style: none;
+    font:bold 14px verdana;
+    padding: 20px;
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    
+}
+  li a{
+    color: #ffffff;
+  }
+  
+  @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0.8;
+      }
+    }
+    
+    .animate-fade-in {
+      animation-name: fade-in;
+      animation-duration: 2s;
+      background-color:#ffffff;
+      filter:alpha(opacity=20);
+      -moz-opacity:0.2;
+      opacity: 0.8;
+      padding: 20px 10px;
+      font-size: 40px;
+      color: rgb(9, 0, 85);
+      border-radius:50px;
+      text-align: center;
+      width:auto;
+      height: auto;
+      margin-bottom:10px;
+    }
+  
+    @keyframes fade-in2 {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0.8;
+      }
+    }
+    
+    .animate-fade-in2 {
+      animation-name: fade-in2;
+      animation-duration: 2s;
+      background-color:rgb(120, 42, 165);
+      filter:alpha(opacity=20);
+      -moz-opacity:0.2;
+      opacity: 0.8;
+      padding: 20px 10px;
+      font-size: 40px;
+      color: rgb(255, 255, 255);
+      border-radius:50px;
+  }
+  
+  @keyframes fade-in3 {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0.8;
+      }
+    }
+    
+    .animate-fade-in3 {
+      animation-name: fade-in3;
+      animation-duration: 2s;
+      background-color: #63390f;
+      filter:alpha(opacity=20);
+      -moz-opacity:0.2;
+      opacity: 0.88;
+      padding: 20px 10px;
+      width:auto;
+      height:auto;
+      font-size: 20px;
+      color: rgb(255, 255, 255);
+  }
+  
+  @keyframes fade-in4 {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0.8;
+      }
+    }
+    
+    .animate-fade-in4 {
+      animation-name: fade-in4;
+      animation-duration: 3s;
+      
+  }
+  
+  @keyframes slide-right {
+      0% {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .animate-slide-right {
+      animation-name: slide-right;
+      animation-duration: 0.5s;
+      color: yellow; 
+      font-size: 30px;
+    }
+  
+    @keyframes slide-up {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate-slide-up {
+      animation-name: slide-up;
+      animation-duration: 5s;
+    }
+    
+  
+    .hover\:rotate-360:hover {
+      transform: rotate(360deg);
+      transition-duration: 1s;
+    }
+  

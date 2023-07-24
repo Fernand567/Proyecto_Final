@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HEXTECH DISPATCH - Registro de Usuarios</title>
+</head>
+<body>
+    <header class="centro">
+        <img src="assets/logo.png" alt="Ejemplo de imagen">
+        <img src="assets/sublogo.gif" width="120px" height="120px">
+    </header>
+    <br>
+    <nav>
+        <a routerLink="/home">INICIO</a>
+        <a routerLink="/servicios">SERVICIOS</a>
+        <a routerLink="/informacion">INFORMACIÓN</a>
+        <a style="float: right;" routerLink="/login">INICIAR SESIÓN</a>
+    </nav>
+    <br>
+    <br>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Agrega el texto "Registrar nuevo usuario" y la imagen a la derecha -->
+                <h1 class="text-4xl font-bold mb-4 animate-fade-in">REGISTRAR NUEVO USUARIO</h1>
+                <img class="animate-slide-right" src="assets/registrar.png" width="300px" height="300px" style="float:left;margin-top: 50px;margin-left: 100px;">
+            </div>
+            <div class="col-md-6 form-container"> <!-- Ajuste del cuadro del formulario hacia la derecha -->
+                <br>
+                <br>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Registro de Usuario</h4>
+                    </div>
+                    <div class="card-body">
+                        <form #frmRegister="ngForm" (ngSubmit)="onRegister(frmRegister)">
+                            <div class="form-group">
+                                <label style="color: black;" for="nombres" >Nombres completos:</label>
+                                <input type="text" id="name" class="form-control" name="name" ngModel required>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo" style="color: black;">Correo electrónico:</label>
+                                <input type="email" id="email" class="form-control" name="email" ngModel required
+                                    pattern="[a-zA-Z0-9._%+-]+@est\.ups\.edu\.ec$">
+                                <small class="form-text text-muted">Ingresa un correo con dominio @est.ups.edu.ec</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" style="color: black;">Contraseña:</label>
+                                <input type="password" id="password" class="form-control" name="password" ngModel required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cargo" style="color: black;">Cargo:</label>
+                                <select id="role" class="form-control" name="role" ngModel required>
+                                    <option value="admin">Administrador</option>
+                                    <option value="operator">Operador</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="form-group mb-3">
+                                <button type="submit" class="btn btn-primary btn-block">REGISTRAR</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+</html>

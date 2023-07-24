@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HEXTECH DISPATCH</title>
+</head>
+<body>
+    <header class="centro">
+        <img src="assets/logo.png" alt="Ejemplo de imagen">
+        <img src="assets/sublogo.gif" width="120px" height="120px">
+    </header><br>
+    <nav>
+        <a routerLink="/home">INICIO</a>
+        <a routerLink="/servicios">SERVICIOS</a>
+        <a routerLink="/informacion">INFORMACIÓN</a>
+        <a style="float: right;" routerLink="/auth/login">INICIAR SESIÓN</a>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Agrega el texto "Ingresar a tu cuenta" y la imagen a la derecha -->
+                <h1 class="text-4xl font-bold mb-4 animate-fade-in" style="float: left;">INGRESAR A TU CUENTA</h1>
+                <img class="animate-slide-right" src="assets/sesion.png" width="300px" height="300px" style="float:left;margin-top: 50px;margin-left: 100px;">
+            </div>
+            <div class="col-md-6">
+              <br>
+              <br>
+                <div class="card">
+                   <div class="card-header">
+                     
+                        <h4 class="card-title">Iniciar sesión</h4>
+                    </div>
+                    <div class="card-body">
+                        <form #frmLogin="ngForm" (ngSubmit)="onLogin(frmLogin)">
+                            <div class="form-group">
+                                <label for="email">Correo electrónico:</label>
+                                <input type="email" id="email" class="form-control" name="email" ngModel required
+                                    pattern="[a-zA-Z0-9._%+-]+@est\.ups\.edu\.ec$">
+                                <small class="form-text text-muted">Ingresa un correo con dominio @est.ups.edu.ec</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Contraseña:</label>
+                                <input type="password" id="password" class="form-control"  name="password"
+                                   ngModel required>
+                            </div>
+                            <br>
+                            <div class="form-group mb-3">
+                                <button type="submit" class="btn btn-primary btn-block" >Ingresar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <ul>
+            <li><a href="https://www.facebook.com/Soldaatje.Gek/">Facebook</a></li>
+            <li><a href="https://www.instagram.com/that_.john/">Instagram</a></li>
+            <li><a href="https://api.whatsapp.com/">Whatsapp</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
