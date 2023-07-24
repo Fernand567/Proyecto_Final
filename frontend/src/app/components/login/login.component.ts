@@ -29,10 +29,10 @@ export class LoginComponent {
 
       // Redirigimos a la ruta correspondiente según el tipo de usuario
       if (cargo === 'admin') {
-        this.router.navigateByUrl('admin-page');
+        this.router.navigateByUrl('auth/admin-page');
         console.log("entro admin");
       } else if (cargo === 'operator') {
-        this.router.navigateByUrl('operator-page');
+        this.router.navigateByUrl('auth/operator-page');
         console.log("entro operador");
       } else {
         // En caso de que el tipo de usuario no esté definido o sea otro valor, redirigimos a una página de error o algún otro comportamiento adecuado.

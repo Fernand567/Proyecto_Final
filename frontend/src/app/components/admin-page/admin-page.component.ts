@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/auth/user.service';
+import { Router } from '@angular/router'; 
 
 
 @Component({
@@ -10,7 +11,7 @@ import { UserService } from 'src/app/auth/user.service';
 export class AdminPageComponent implements OnInit{
   users?: any[];
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.getUsers();
@@ -26,6 +27,12 @@ export class AdminPageComponent implements OnInit{
       }
     );
   }
+
+  editUser(userId: string): void {
+
+    this.router.navigateByUrl(`/auth/edit-user/${userId}`);
+    
+  }
   
   deleteUser(user: any): void {
     this.userService.deleteUser(user._id).subscribe(
@@ -38,4 +45,12 @@ export class AdminPageComponent implements OnInit{
       }
     );
   }
+
+  deleteUserConfirmation(user: any): void {
+    const confirmation = window.confirm('¿Estás seguro de eliminar el usuario?');
+    if (confirmation) {
+      this.deleteUser(user);
+    }
+  }
+
 }

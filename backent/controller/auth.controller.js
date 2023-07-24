@@ -92,3 +92,43 @@ exports.getUsers = async (req, res, next) => {
       res.status(500).json({ message: 'Error al eliminar el usuario', error });
     }
   };
+
+  exports.updateUser = async (req, res) => {
+    try {
+      const userId = req.params.id; // Suponiendo que el ID del usuario a actualizar se pasa como parámetro en la URL
+      const updatedData = req.body; // Datos actualizados del usuario que vienen en el cuerpo de la solicitud
+  
+      // Aquí puedes realizar validaciones adicionales si es necesario
+  
+      // Actualizar el usuario en la base de datos
+      const updatedUser = await User.findByIdAndUpdate(userId, updatedData, { new: true });
+  
+      if (!updatedUser) {
+        return res.status(404).json({ message: 'Usuario no encontrado' });
+      }
+  
+      res.json({ message: 'Usuario actualizado exitosamente', user: updatedUser });
+    } catch (error) {
+      res.status(500).json({ message: 'Error al actualizar el usuario', error });
+    }
+  };
+  
+
+  exports.getUserById = async (req, res) => {
+    try {
+      const userId = req.params.id; // Suponiendo que el ID del usuario se pasa como parámetro en la URL
+      const user = await User.findById(userId, { password: 0 }); // Excluimos el campo "password" del usuario
+  
+      if (!user) {
+        // Si no se encuentra el usuario con el ID proporcionado, se envía una respuesta con código 404 (Not Found)
+        return res.status(404).json({ message: 'Usuario no encontrado' });
+      }
+  
+      // Si se encuentra el usuario, se envía el usuario como respuesta
+      res.json(user);
+    } catch (error) {
+      // Si ocurre un error durante la búsqueda del usuario, se envía una respuesta con código 500 (Internal Server Error)
+      res.status(500).json({ message: 'Error al obtener el usuario', error });
+    }
+  };
+  

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UserI } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,17 @@ export class UserService {
   deleteUser(userId: string): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/users/${userId}`);
   }
+
+  getUserById(userId: string): Observable<UserI> {
+    const url = `${this.apiUrl}/users/${userId}`;
+    return this.http.get<UserI>(url);
+  }
+
+  updateUser(userId: string, userData: UserI): Observable<UserI> {
+    const url = `${this.apiUrl}/users/${userId}`; // URL para la actualización del usuario
+    return this.http.put<UserI>(url, userData);
+  }
+
 }
 
 

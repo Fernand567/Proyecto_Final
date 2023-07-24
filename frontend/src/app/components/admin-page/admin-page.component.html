@@ -2,7 +2,7 @@
   <h1>Bienvenido, Administrador</h1>
 
   <!-- Botón para redireccionar a la página de agregar usuarios -->
-  <a routerLink="/register" class="btn btn-primary mt-3">Agregar Usuarios</a>
+  <a routerLink="/auth/register" class="btn btn-primary mt-3">Agregar Usuarios</a>
 
   <h2>Lista de Usuarios</h2>
   <table class="table mt-4">
@@ -23,8 +23,8 @@
         <td>{{ user.role }}</td>
         <td>
           <!-- Agrega aquí los botones u opciones para editar o eliminar el usuario -->
-          <button class="btn btn-primary btn-sm">Editar</button>
-          <button class="btn btn-danger btn-sm" (click)="deleteUser(user)">Eliminar</button>
+          <button class="btn btn-primary btn-sm" (click)="editUser(user._id)">Editar</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteUserConfirmation(user)">Eliminar</button>
         </td>
       </tr>
     </tbody>

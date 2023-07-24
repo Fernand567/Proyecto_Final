@@ -9,6 +9,8 @@ import { InformacionComponent } from './components/informacion/informacion.compo
 import { ServiciosComponent } from './components/servicios/servicios.component';
 import { AdminPageComponent } from './components/admin-page/admin-page.component';
 import { OperatorPageComponent } from './components/operator-page/operator-page.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -19,12 +21,13 @@ import { OperatorPageComponent } from './components/operator-page/operator-page.
     InformacionComponent,
     ServiciosComponent,
     AdminPageComponent,
-    OperatorPageComponent
+    OperatorPageComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
