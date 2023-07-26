@@ -1,34 +1,51 @@
-<div class="container mt-4">
-  <h1>Bienvenido, Administrador</h1>
+<head>
+  <meta charset="UTF-8">
+  <title>ADMIN</title>
+</head>
+<body style="background-color: transparent;">
+  <nav>
+    <a routerLink="/home">INICIO</a>
+    <a routerLink="/servicios">SERVICIOS</a>
+    <a routerLink="/informacion">INFORMACIÓN</a>
+    <a style="float: right;" routerLink="/auth/login">CERRAR SESIÓN</a>
+</nav>
+  <div class="container mt-4">
+    <h1 class="animate-slide-right">¡Bienvenido Administrador!</h1><br>
+    <h2 class="animate-slide-right1">Lista de Usuarios</h2>
+    <table class="table mt-4">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Cargo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Utilizamos *ngFor para iterar sobre la lista de usuarios y mostrarlos en la tabla -->
+        <!-- Aquí, asumimos que tienes una propiedad 'users' en el componente que contiene la lista de usuarios -->
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td>
+            <!-- Agrega aquí los botones u opciones para editar o eliminar el usuario -->
+            <button class="btn btn-primary btn-sm" (click)="editUser(user._id)">Editar</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteUserConfirmation(user)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a routerLink="/auth/register" class="btn btn-primary mt-3">Agregar Usuarios</a>
 
-  <!-- Botón para redireccionar a la página de agregar usuarios -->
-  <a routerLink="/auth/register" class="btn btn-primary mt-3">Agregar Usuarios</a>
+  </div>
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-  <h2>Lista de Usuarios</h2>
-  <table class="table mt-4">
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Email</th>
-        <th>Cargo</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Utilizamos *ngFor para iterar sobre la lista de usuarios y mostrarlos en la tabla -->
-      <!-- Aquí, asumimos que tienes una propiedad 'users' en el componente que contiene la lista de usuarios -->
-      <tr *ngFor="let user of users">
-        <td>{{ user.name }}</td>
-        <td>{{ user.email }}</td>
-        <td>{{ user.role }}</td>
-        <td>
-          <!-- Agrega aquí los botones u opciones para editar o eliminar el usuario -->
-          <button class="btn btn-primary btn-sm" (click)="editUser(user._id)">Editar</button>
-          <button class="btn btn-danger btn-sm" (click)="deleteUserConfirmation(user)">Eliminar</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
 
   

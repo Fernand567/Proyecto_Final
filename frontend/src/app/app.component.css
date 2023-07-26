@@ -1,0 +1,57 @@
+
+/* You can add global styles to this file, and also import other style files */
+header{
+    background: rgb(144,66,254);
+    background: linear-gradient(180deg, rgba(144,66,254,1) 0%, rgba(0,0,0,1) 100%);
+    padding: 0px;
+  }
+  
+  .fondo{
+    background:url(/assets/fondo.jpg);
+    background-size: cover;
+}
+  nav a {
+    font:bold 14px verdana;
+    float: left;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 12px;
+    text-decoration: underline;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+    margin: 2px 30px;
+}
+  
+nav{
+    overflow: hidden;
+    padding: 10px 5px;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(144,66,254,1) 50%, rgba(0,0,0,1) 100%);
+} 
+footer {
+    overflow: hidden;
+    color: #fff;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(144,66,254,1) 50%, rgba(0,0,0,1) 100%);
+    padding: 5px 10px;
+    text-align: center;
+    clear:both; 
+}
+  
+footer li{
+    list-style: none;
+    font:bold 14px verdana;
+    padding: 20px;
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    
+}
+li a{
+  color: #ffffff;
+}
+
+.centro{
+  text-align: center;
+}

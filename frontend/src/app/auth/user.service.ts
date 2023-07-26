@@ -28,7 +28,9 @@ export class UserService {
     const url = `${this.apiUrl}/users/${userId}`; // URL para la actualización del usuario
     return this.http.put<UserI>(url, userData);
   }
+  
+  getUserInfo(): Observable<any> {
+    return this.http.get<any>('/api/user-info'); // Reemplaza '/api/user-info' con la URL de tu endpoint para obtener la información del usuario autenticado
+  }
 
 }
-
-

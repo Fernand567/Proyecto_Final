@@ -11,6 +11,10 @@ import { AdminPageComponent } from './components/admin-page/admin-page.component
 import { OperatorPageComponent } from './components/operator-page/operator-page.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NgChartsModule } from 'ng2-charts';
+
+
 
 
 
@@ -22,12 +26,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     ServiciosComponent,
     AdminPageComponent,
     OperatorPageComponent,
-    EditUserComponent
+    EditUserComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,ReactiveFormsModule
+    FormsModule,ReactiveFormsModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

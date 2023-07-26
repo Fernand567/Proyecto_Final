@@ -7,6 +7,9 @@ import { Observable,BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class AuthService {
+  getUserId() {
+    throw new Error('Method not implemented.');
+  }
   AUTH_SERVER: string='http://localhost:3000';
   authSubject= new BehaviorSubject(false);
   private token:string='';

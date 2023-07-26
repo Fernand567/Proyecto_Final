@@ -132,3 +132,47 @@ exports.getUsers = async (req, res, next) => {
     }
   };
   
+
+
+exports.updatePassword = async (req, res) => {
+  try {
+    const { userId } = req.params; // Obtener el userId de los parámetros de la URL
+    const { newPassword } = req.body; // Obtener la nueva contraseña del cuerpo de la solicitud
+
+    // Verificar si la nueva contraseña cumple con tus criterios de seguridad aquí (si es necesario)
+
+    // Generar un salt y cifrar la nueva contraseña con bcrypt
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(newPassword, salt);
+
+    // Actualizar la contraseña del usuario en la base de datos
+    const updatedUser = await User.findByIdAndUpdate(userId, { password: hashedPassword }, { new: true });
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: 'Usuario no encontrado' });
+    }
+
+    // Enviar una respuesta al frontend para confirmar la actualización de contraseña
+    res.json({ message: 'Contraseña actualizada exitosamente' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error al actualizar la contraseña', error });
+  }
+};
+
+// auth.controller.js
+// ...
+
+exports.getDashboardData = async (req, res) => {
+  try {
+    // Aquí realizarás una consulta a la base de datos para obtener los datos requeridos para el dashboard
+    // Por ejemplo, supongamos que tienes una colección "boxes" con campos "name" y "size"
+    // Puedes usar el modelo "Box" para realizar la consulta a la base de datos
+
+    const boxes = await Box.find({}, 'name size');
+
+    // Envía los datos obtenidos como respuesta
+    res.json({ success: true, data: boxes });
+  } catch (error) {
+    res.status(500).json({ success: false, message: 'Error al obtener los datos del dashboard', error });
+  }
+};

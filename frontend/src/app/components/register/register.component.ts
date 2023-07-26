@@ -25,4 +25,8 @@ export class RegisterComponent implements OnInit{
     })
     console.log('Register',form.value)
   }
+  cancelEdit(): void {
+    // Redirigir a la página anterior
+    this.router.navigate(['/auth/admin-page']);
+  }
 }

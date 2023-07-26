@@ -5,17 +5,6 @@
     <title>HEXTECH DISPATCH - Registro de Usuarios</title>
 </head>
 <body>
-    <header class="centro">
-        <img src="assets/logo.png" alt="Ejemplo de imagen">
-        <img src="assets/sublogo.gif" width="120px" height="120px">
-    </header>
-    <br>
-    <nav>
-        <a routerLink="/home">INICIO</a>
-        <a routerLink="/servicios">SERVICIOS</a>
-        <a routerLink="/informacion">INFORMACIÓN</a>
-        <a style="float: right;" routerLink="/login">INICIAR SESIÓN</a>
-    </nav>
     <br>
     <br>
     <div class="container mt-5">
@@ -58,6 +47,7 @@
                             <br>
                             <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary btn-block">REGISTRAR</button>
+                                <button type="button" class="btn btn-danger" style="margin-left: 15px;" (click)="cancelEdit()">Cancelar</button>
                             </div>
                         </form>
                     </div>
@@ -65,6 +55,8 @@
             </div>
         </div>
     </div>
+    <br>
+    <br>
     <br>
     <br>
     <br>
