@@ -13,6 +13,7 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgChartsModule } from 'ng2-charts';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -33,7 +34,7 @@ import { NgChartsModule } from 'ng2-charts';
     BrowserModule,
     AppRoutingModule,
     FormsModule,ReactiveFormsModule,
-    NgChartsModule
+    NgChartsModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

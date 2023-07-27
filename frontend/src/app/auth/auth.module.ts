@@ -14,7 +14,7 @@ import { ChangePasswordService } from './change-password.service';
 
 
 @NgModule({
-  declarations: [RegisterComponent,LoginComponent,ChangePasswordComponent],
+  declarations: [RegisterComponent,LoginComponent,ChangePasswordComponent,],
   imports: [
     CommonModule,
     FormsModule,

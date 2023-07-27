@@ -12,4 +12,5 @@ module.exports=(router)=>{
     router.put('/admin-page/users/:id',Users.updateUser);
     router.put('/update-password/:userId', Users.updatePassword);
     router.post('/registrar-caja', cajasController.registrarCaja);
+    router.get('/cajas', cajasController.obtenerCajas);
 }

@@ -23,3 +23,13 @@ exports.registrarCaja = async (req, res) => {
     return res.status(500).json({ error: 'Error al registrar la caja' });
   }
 };
+
+exports.obtenerCajas = async (req, res) => {
+  try {
+    const cajas = await Caja.find({}, { _id: 0, tamano: 1, cantidad: 1 });
+    res.json(cajas);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Error al obtener los datos de las cajas' });
+  }
+};
